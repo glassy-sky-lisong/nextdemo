@@ -1,12 +1,15 @@
 import React,{ Component } from 'react';
 import axios from 'axios'
+import dynamic from 'next/dynamic'
 
+const One = dynamic(import('../components/One'))
 const Axiosdemo = ({router, username}) => {
 
     return (
         <>
             <p onClick={getDate}>hellow, world !</p>
             <p>{username}</p>
+            <One/>
         </>
     )
 }
