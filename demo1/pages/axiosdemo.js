@@ -3,22 +3,18 @@ import axios from 'axios'
 
 const Axiosdemo = ({router, username}) => {
 
-    const getPromisedemo = () => {
-        const promise = new Promise((resolve) => {
-            console.log('I am success'); 
-            resolve('success')
-        }).then(
-            (res)=>{
-                console.log(res);              
-            }
-        )
-    }
     return (
         <>
-            <p onClick={getPromisedemo}>hellow, world !</p>
+            <p onClick={getDate}>hellow, world !</p>
             <p>{username}</p>
         </>
     )
+}
+
+const getDate = async () => {
+    const moment = await import('moment')
+    console.log(moment.default(Date.now()).format());
+    
 }
 
 Axiosdemo.getInitialProps = async () => {
